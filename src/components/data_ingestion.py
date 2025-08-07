@@ -3,6 +3,11 @@ import sys
 import pandas as pd
 from src.logger import logging
 from src.exception import CustomException
+from src.utils import save_object
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
 
 class DataIngestion:
     def __init__(self):
@@ -41,7 +46,7 @@ if __name__ == "__main__":
     data_transformation = DataTransformation()
     train_arr, test_arr, preprocessor_path = data_transformation.initiate_transformation(train_data, test_data)
 
-    print("✅ Data ingestion and transformation completed.")
-    print(f"Train array shape: {train_arr.shape}")
-    print(f"Test array shape: {test_arr.shape}")
-    print(f"Preprocessor saved at: {preprocessor_path}")
+    model_trainer=ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr,test_arr,preprocessor_path=preprocessor_path))
+
+    
