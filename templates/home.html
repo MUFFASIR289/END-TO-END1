@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Exam Performance Indicator</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2017/03/27/13/59/formula-1-2179205_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 15px;
+      width: 500px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+
+    h1, h2, legend {
+      text-align: center;
+      color: #ff4d4d;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+    }
+
+    .form-control::placeholder {
+      color: #aaa;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: linear-gradient(45deg, #ff4d4d, #c0392b);
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>Student Exam Performance Indicator</h1>
+
+    <form action="{{ url_for('predict_datapoint') }}" method="post">
+      <legend>Student Exam Performance Prediction</legend>
+
+      <label class="form-label">Gender</label>
+      <select class="form-control" name="gender" required>
+        <option selected disabled value="">Select your Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label class="form-label">Race or Ethnicity</label>
+      <select class="form-control" name="ethnicity" required>
+        <option selected disabled value="">Select Ethnicity</option>
+        <option value="group A">Group A</option>
+        <option value="group B">Group B</option>
+        <option value="group C">Group C</option>
+        <option value="group D">Group D</option>
+        <option value="group E">Group E</option>
+      </select>
+
+      <label class="form-label">Parental Level of Education</label>
+      <select class="form-control" name="parental level of education" required>
+        <option selected disabled value="">Select Parent Education</option>
+        <option value="associate's degree">associate's degree</option>
+        <option value="bachelor's degree">bachelor's degree</option>
+        <option value="high school">high school</option>
+        <option value="master's degree">master's degree</option>
+        <option value="some college">some college</option>
+        <option value="some high school">some high school</option>
+      </select>
+
+      <label class="form-label">Lunch Type</label>
+      <select class="form-control" name="lunch" required>
+        <option selected disabled value="">Select Lunch Type</option>
+        <option value="free/reduced">free/reduced</option>
+        <option value="standard">standard</option>
+      </select>
+
+      <label class="form-label">Test Preparation Course</label>
+      <select class="form-control" name="test preparation course" required>
+        <option selected disabled value="">Select Test Course</option>
+        <option value="none">None</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label class="form-label">Writing Score out of 100</label>
+      <input class="form-control" type="number" name="reading score" placeholder="Enter your Reading score" min="0" max="100" required />
+
+      <label class="form-label">Reading Score out of 100</label>
+      <input class="form-control" type="number" name="writing score" placeholder="Enter your Writing score" min="0" max="100" required />
+
+      <input class="btn" type="submit" value="Predict your Maths Score" />
+    </form>
+
+    <h2>THE prediction is {{ results }}</h2>
+  </div>
+</body>
+</html>

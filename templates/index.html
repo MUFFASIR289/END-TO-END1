@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('https://w.wallhaven.cc/full/q6/wallhaven-q6wpd7.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+      letter-spacing: 3px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      z-index: 2;
+    }
+
+    .slide-img {
+      position: absolute;
+      width: 200px;
+      height: auto;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .left-slide {
+      top: 20%;
+      left: -250px;
+      animation: slideLeft 12s linear infinite;
+    }
+
+    .right-slide {
+      bottom: 20%;
+      right: -250px;
+      animation: slideRight 14s linear infinite;
+    }
+
+    .up-slide {
+      bottom: -250px;
+      left: 35%;
+      animation: slideUp 16s linear infinite;
+    }
+
+    .down-slide {
+      top: -250px;
+      right: 35%;
+      animation: slideDown 18s linear infinite;
+    }
+
+    @keyframes slideLeft {
+      0% { left: -250px; }
+      100% { left: 110%; }
+    }
+
+    @keyframes slideRight {
+      0% { right: -250px; }
+      100% { right: 110%; }
+    }
+
+    @keyframes slideUp {
+      0% { bottom: -250px; }
+      100% { bottom: 110%; }
+    }
+
+    @keyframes slideDown {
+      0% { top: -250px; }
+      100% { top: 110%; }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://wallpapersden.com/image/download/red-bull-racing-2022-formula-one-2022-wallpaper_1213896.jpg" class="slide-img left-slide" />
+  <img src="https://www.peakpx.com/en/hd-wallpaper-desktop-vpdvr" class="slide-img right-slide" />
+  <img src="https://wallpapers.com/wallpapers/carlos-sainz-jr-red-ferrari-race-car-fq6a4ya57luvm3my.html" class="slide-img up-slide" />
+  <img src="https://wallpapers.com/wallpapers/ferrari-f1-3d821p5g48auxler.html" class="slide-img down-slide" />
+  <h1>Welcome</h1>
+</body>
+</html>

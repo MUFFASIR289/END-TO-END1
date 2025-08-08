@@ -71,7 +71,9 @@ class DataTransformation:
 
             print("✅ Preprocessor saved at:", self.data_transformation_config.preprocessor_obj_file)
 
-            return train_arr, test_arr, self.data_transformation_config.preprocessor_obj_file
+            return train_arr,
+            test_arr,
+            self.data_transformation_config.preprocessor_obj_file
 
         except Exception as e:
             raise CustomException(e, sys)
